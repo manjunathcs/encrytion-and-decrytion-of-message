@@ -1,0 +1,26 @@
+import string
+import random
+
+char=" "+string.punctuation+string.digits+string.ascii_letters
+char=list(char)
+key=char.copy()
+random.shuffle(key)
+
+#encrytion
+plain_text=input("enter the plain text: ")
+cipher_text=" "
+for letter in plain_text:
+    index=char.index(letter)
+    cipher_text+=key[index]
+
+print(f"cipher text: {cipher_text}")
+
+
+#decrytion
+cipher_text=input("enter the cipher text :")
+plain_text=" "
+for letter in cipher_text:
+    index=key.index(letter)
+    plain_text+=char[index]
+
+print(f"plain text: {plain_text}")
